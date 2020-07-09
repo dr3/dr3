@@ -1,0 +1,15 @@
+{
+  "name": "dr3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dr3/dr3.git",
+  "author": "Drew McMillan <drew.mcmillan@thetrainline.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "scripts": {
+    "update": "node index.js > README.md",
+    "release": "yarn update && git add . && git commit -m \"update\" && git push;"
+  }
+}
