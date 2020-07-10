@@ -58,14 +58,11 @@ const template = (artists, tracks) => {
 };
 
 const spotifyFetch = (type) =>
-  fetch(
-    `https://api.spotify.com/v1/me/top/${type}?time_range=short_term&limit=10`,
-    {
-      headers: {
-        Authorization: `Bearer ${secrets.spotifyAuth}`,
-      },
-    }
-  )
+  fetch(`https://api.spotify.com/v1/me/top/${type}?limit=10`, {
+    headers: {
+      Authorization: `Bearer ${secrets.spotifyAuth}`,
+    },
+  })
     .then((res) => res.json()) // expecting a json response
     .then((json) => {
       return json.items;
