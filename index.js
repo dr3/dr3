@@ -45,7 +45,7 @@ const process = async () => {
 
   const tracksOutput = tracks.map(
     (track, index) =>
-      `${getImage(track)}[${track.name} - ${track.artists
+      `${getImage(track)} [${track.name} - ${track.artists
         .map((artist) => artist.name)
         .join()}](${track.external_urls.spotify})`
   );
