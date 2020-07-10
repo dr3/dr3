@@ -37,7 +37,7 @@ const spotifyFetch = (type) =>
 const getImage = (thing) =>
   `<img src="${thing.album.images.pop().url}" alt="Photo of ${
     thing.name
-  }" width="20px" />`;
+  }" width="40px" />`;
 
 const process = async () => {
   const tracks = await spotifyFetch("tracks");
@@ -45,7 +45,7 @@ const process = async () => {
 
   const tracksOutput = tracks.map(
     (track, index) =>
-      `${index + 1}) ${getImage(track)}[${track.name} - ${track.artists
+      `${getImage(track)}[${track.name} - ${track.artists
         .map((artist) => artist.name)
         .join()}](${track.external_urls.spotify})`
   );
