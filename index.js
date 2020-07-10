@@ -48,7 +48,9 @@ const template = (artists, tracks) => {
     artists.map(getImage1).join(""),
     `<details>`,
     `<summary>(last updated ${today})</summary>`,
+    ``,
     ...getTable(tracks, artists),
+    ``,
     `</details>`,
   ];
 
