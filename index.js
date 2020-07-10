@@ -34,13 +34,18 @@ const spotifyFetch = (type) =>
     .then((res) => res.json()) // expecting a json response
     .then((json) => json.items);
 
+const getImage = (thing) =>
+  `<img src="${thing.album.images.pop().url}" alt="Photo of ${
+    thing.name
+  }" width="20px" />`;
+
 const process = async () => {
   const tracks = await spotifyFetch("tracks");
   const artists = await spotifyFetch("artists");
 
   const tracksOutput = tracks.map(
     (track, index) =>
-      `${index + 1}) [${track.name} - ${track.artists
+      `${index + 1}) ${getImage(track)}[${track.name} - ${track.artists
         .map((artist) => artist.name)
         .join()}](${track.external_urls.spotify})`
   );
