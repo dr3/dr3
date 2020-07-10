@@ -5,8 +5,6 @@ const today = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
 
 const getTable = (tracks, artists) => {
   const lines = [
-    `### My spotify favs atm`,
-    `(updated ${today})`,
     "| top artists | top tracks |",
     "|-------------|------------|",
   ];
