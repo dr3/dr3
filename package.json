@@ -10,6 +10,6 @@
   },
   "scripts": {
     "update": "node index.js > README.md",
-    "release": "yarn update && git add . && git commit -m \"update\" && git push;"
+    "release": "git update-index --assume-unchanged secrets.json && yarn update && git add . && git commit -m \"update\" && git push;"
   }
 }
