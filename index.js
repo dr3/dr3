@@ -32,7 +32,7 @@ const getTable = (tracks, artists) => {
 
 const getImage1 = (thing) =>
   `[<img src="${
-    (thing.album ? thing.album.images : thing.images).pop().url
+    (thing.album ? thing.album.images : thing.images)[0].url
   }" alt="Photo of ${thing.name}" width="10%" />](${
     thing.external_urls.spotify
   })`;
