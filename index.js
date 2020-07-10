@@ -30,6 +30,11 @@ const getTable = (tracks, artists) => {
   return lines;
 };
 
+const getImage1 = (thing) =>
+  `<img src="${
+    (thing.album ? thing.album.images : thing.images).pop().url
+  }" alt="Photo of ${thing.name}" width="40px" align="left" />`;
+
 const template = (artists, tracks) => {
   const lines = [
     "# Hi there, I'm Drew 👋",
@@ -40,7 +45,7 @@ const template = (artists, tracks) => {
   ];
 
   tracks.forEach((track) => {
-    lines.push(getImage(track));
+    lines.push(getImage1(track));
   });
 
   return lines.join("\n");
