@@ -31,9 +31,11 @@ const getTable = (tracks, artists) => {
 };
 
 const getImage1 = (thing) =>
-  `<img src="${
+  `[<img src="${
     (thing.album ? thing.album.images : thing.images).pop().url
-  }" alt="Photo of ${thing.name}" width="10%" />`;
+  }" alt="Photo of ${thing.name}" width="10%" />](${
+    thing.external_urls.spotify
+  })`;
 
 const template = (artists, tracks) => {
   const lines = [
