@@ -30,12 +30,13 @@ const getTable = (tracks, artists) => {
   return lines;
 };
 
-const getImage1 = (thing) =>
-  `[<img src="${
-    (thing.album ? thing.album.images : thing.images)[0].url
-  }" alt="Photo of ${thing.name}" width="10%" />](${
-    thing.external_urls.spotify
-  })`;
+const getImage1 = (thing) => {
+  const images = thing.album ? thing.album.images : thing.images;
+
+  const image = images[1] || images[0];
+
+  return `[<img src="${image.url}" alt="Photo of ${thing.name}" width="10%" />](${thing.external_urls.spotify})`;
+};
 
 const template = (artists, tracks) => {
   const lines = [
