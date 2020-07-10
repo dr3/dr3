@@ -42,11 +42,8 @@ const template = (artists, tracks) => {
     "📫 How to reach me: [drew.mx/contact](https://drew.mx/contact)  ",
     "⚡ Fun fact: A crocodile can’t poke its tongue out.  ",
     ...getTable(tracks, artists),
+    tracks.map(getImage1).join(""),
   ];
-
-  tracks.forEach((track) => {
-    lines.push(getImage1(track));
-  });
 
   return lines.join("\n");
 };
