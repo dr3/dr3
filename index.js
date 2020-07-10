@@ -39,6 +39,10 @@ const template = (artists, tracks) => {
     ...getTable(tracks, artists),
   ];
 
+  tracks.forEach((track) => {
+    lines.push(getImage(track));
+  });
+
   return lines.join("\n");
 };
 
