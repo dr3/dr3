@@ -45,14 +45,14 @@ const process = async () => {
 
   const tracksOutput = tracks.map(
     (track, index) =>
-      `${getImage(track)} > [${track.name} - ${track.artists
+      `${getImage(track)} [${track.name} - ${track.artists
         .map((artist) => artist.name)
         .join()}](${track.external_urls.spotify})`
   );
 
   const artistsOutput = artists.map(
     (artist, index) =>
-      `${getImage(artist)} > [${artist.name}](${artist.external_urls.spotify})`
+      `${getImage(artist)} [${artist.name}](${artist.external_urls.spotify})`
   );
 
   console.log(template(artistsOutput, tracksOutput));
