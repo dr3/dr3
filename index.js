@@ -44,9 +44,8 @@ const template = (artists, tracks) => {
     "📫 How to reach me: [drew.mx/contact](https://drew.mx/contact)  ",
     "⚡ Fun fact: A crocodile can’t poke its tongue out.  ",
     // ...getTable(tracks, artists),
-    "### My top Spotify tracks",
+    "### My top Spotify tracks & artists",
     tracks.map(getImage1).join(""),
-    "### My top Spotify artists",
     artists.map(getImage1).join(""),
     `(last updated ${today}`,
   ];
