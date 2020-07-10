@@ -48,7 +48,10 @@ const template = (artists, tracks) => {
     "### My top Spotify tracks & artists",
     tracks.map(getImage1).join(""),
     artists.map(getImage1).join(""),
-    `(last updated ${today})`,
+    `<details>`,
+    `<summary>(last updated ${today})</summary>`,
+    ...getTable(tracks, artists),
+    `</details>`,
   ];
 
   return lines.join("\n");
