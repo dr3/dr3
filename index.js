@@ -58,7 +58,10 @@ const spotifyFetch = (type) =>
     }
   )
     .then((res) => res.json()) // expecting a json response
-    .then((json) => json.items);
+    .then((json) => {
+      console.log(json);
+      return json.items;
+    });
 
 const getImage = (thing) =>
   `<img src="${
