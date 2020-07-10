@@ -33,7 +33,7 @@ const getTable = (tracks, artists) => {
 const getImage1 = (thing) =>
   `<img src="${
     (thing.album ? thing.album.images : thing.images).pop().url
-  }" alt="Photo of ${thing.name}" height="90px" />`;
+  }" alt="Photo of ${thing.name}" width="9%" />`;
 
 const template = (artists, tracks) => {
   const lines = [
