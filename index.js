@@ -28,12 +28,23 @@ const getTable = (tracks, artists) => {
   return lines;
 };
 
-const getImage1 = (thing) => {
+const getLargeImage = (thing) => {
   const images = thing.album ? thing.album.images : thing.images;
 
   const image = images[1] || images[0];
 
   return `[<img src="${image.url}" alt="Photo of ${thing.name}" width="10%" />](${thing.external_urls.spotify})`;
+};
+
+const getTracksImage = (type) => {
+  const images = {
+    artists:
+      "https://user-images.githubusercontent.com/11341355/87235261-2df80980-c3d2-11ea-9f63-cf4737f9897f.png",
+    tracks:
+      "https://user-images.githubusercontent.com/11341355/87235266-3b14f880-c3d2-11ea-8c38-e2d45617b020.png",
+  };
+
+  return `<img src="${images[type]}" alt="My top ${type}" width="10%" />`;
 };
 
 const template = (artists, tracks) => {
@@ -44,8 +55,8 @@ const template = (artists, tracks) => {
     "⚡ Fun fact: A crocodile can’t poke its tongue out.  ",
     // ...getTable(tracks, artists),
     "### My top Spotify tracks & artists",
-    tracks.map(getImage1).join(""),
-    artists.map(getImage1).join(""),
+    [getTracksImage("tracks"), ...tracks.map(getLargeImage)].join(""),
+    [getTracksImage("artists"), ...artists.map(getLargeImage)].join(""),
     `<details>`,
     `<summary>(last updated ${today})</summary>`,
     ``,
