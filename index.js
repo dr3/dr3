@@ -69,7 +69,7 @@ const template = (artists, tracks) => {
 };
 
 const spotifyFetch = (type) =>
-  fetch(`https://api.spotify.com/v1/me/top/${type}?limit=10`, {
+  fetch(`https://api.spotify.com/v1/me/top/${type}?limit=9`, {
     headers: {
       Authorization: `Bearer ${secrets.spotifyAuth}`,
     },
